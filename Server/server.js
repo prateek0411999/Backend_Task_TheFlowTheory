@@ -7,10 +7,10 @@ const cors =require('cors');
 const app= express();
 
 app.use(cors());
-
+let a;
 app.use(bodyParser.json());
 
-const db="mongodb+srv://prat:prat@cluster0.zlfyb.gcp.mongodb.net/test";
+const db="mongodb+srv://prat:prat@cluster0.zlfyb.gcp.mongodb.net/TheFlowTheory";
 mongoose.connect(db,(err)=>{
     if(err){
         console.log('Error!'+ err)
@@ -64,6 +64,7 @@ function verifyToken(req, res, next) {
     console.log("--------------");
     console.log('------------------------------------------')
     let userData= req.body;
+    a=userData;
     let user=new login(userData);
 
     user.save((error,registeredUser)=>{
@@ -108,3 +109,10 @@ app.post('/login',(req,res)=>{
         }
     })
 })
+
+app.get('/getsigned',verifyToken,(req,res)=>{
+    console.log("token verified");
+    console.log(a);
+    res.status(200).send(a);
+})
+
