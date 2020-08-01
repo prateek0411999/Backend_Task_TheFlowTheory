@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
     private _login: RegisterUserService) { }
 
   ngOnInit(): void {
-   
+    
   }
   loginUserData={email: '',password: ''}
     
@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
   {
     console.log(' logging in user data ');
     console.log(this.loginUserData);
+    
     this._login.loginUser(this.loginUserData)
     .subscribe(
       res=> { 
@@ -31,8 +32,8 @@ export class LoginComponent implements OnInit {
       .subscribe(
         res=>{
           console.log(res);
-          if(res==true)
-          {
+            if(res==this.loginUserData.email)
+            {
             this._router.navigate(['/signed']);
           }
         },

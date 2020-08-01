@@ -3,7 +3,20 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: "AIzaSyCil0YcRjDoHadDqP6KQGXgOr8WMxjJTQw",
+    authDomain: "theflowtheory-8b544.firebaseapp.com",
+    databaseURL: "https://theflowtheory-8b544.firebaseio.com",
+    projectId: "theflowtheory-8b544",
+    storageBucket: "theflowtheory-8b544.appspot.com",
+    messagingSenderId: "900843746174",
+    appId: "1:900843746174:web:fb16720e4bf8aa54bd792f",
+    measurementId: "G-Y291DMQTYS"
+
+
+
+  }
 };
 
 /*
